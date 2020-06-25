@@ -48,7 +48,7 @@
                             :today today}))))
 
 (defn greet! []
-  (doseq [greeting (to-greetings (load-employees))]
+  (doseq [greeting (to-greetings (get-today) (load-employees))]
     (postal/send-message
      postal-host
      greeting)))
